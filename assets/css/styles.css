@@ -1,3 +1,20 @@
+/* Navigation */
+nav.font-sans {
+    vertical-align: middle;
+}
+nav.font-sans > a {
+    vertical-align: middle;
+}
+
+/* Mobile nav: 48px tap targets */
+@media (max-width: 1023px) {
+    nav.font-sans > a {
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
 /* Active Navigation */
 nav a.active {
     font-weight: 600;
@@ -6,6 +23,18 @@ nav a.active {
     text-decoration-style: wavy;
     text-decoration-thickness: 1.5px;
     text-underline-offset: 4px;
+}
+
+/* Footer: slightly smaller text */
+footer {
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+    footer {
+        font-size: 0.6875rem;
+    }
 }
 
 /* View Transitions */
