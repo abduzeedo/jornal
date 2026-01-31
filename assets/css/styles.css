@@ -1,3 +1,13 @@
+/* Active Navigation */
+nav a.active {
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #0066cc;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+}
+
 /* View Transitions */
 @view-transition { navigation: auto; }
 ::view-transition-old(root) { animation: fade-out 0.15s ease-out; }
