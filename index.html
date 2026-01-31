@@ -7,200 +7,60 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --serif: 'Source Serif 4', Georgia, serif;
-            --black: #1a1a1a;
-            --gray: #666;
-            --light-gray: #999;
-            --border: #e5e5e5;
-            --bg: #fff;
-            --accent: #0066cc;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Source Serif 4', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        black: '#1a1a1a',
+                        gray: { DEFAULT: '#666', light: '#999' },
+                        border: '#e5e5e5',
+                        accent: '#0066cc',
+                    }
+                }
+            }
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { font-size: 18px; }
-        body {
-            font-family: var(--serif);
-            line-height: 1.6;
-            color: var(--black);
-            background: var(--bg);
-            -webkit-font-smoothing: antialiased;
-        }
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Navigation */
-        nav {
-            font-family: var(--sans);
-            display: flex;
-            gap: 32px;
-            padding: 32px 0;
-            border-bottom: 1px solid var(--border);
-        }
-        nav a {
-            text-decoration: none;
-            color: var(--black);
-            font-size: 0.778rem; /* 14px */
-            font-weight: 500;
-            letter-spacing: 0.01em;
-        }
-        nav a:hover { color: var(--accent); }
-
-        /* Hero */
-        .hero {
-            padding: 80px 0;
-        }
-        h1 {
-            font-family: var(--sans);
-            font-size: 2.667rem; /* 48px */
-            font-weight: 600;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            margin-bottom: 24px;
-            color: var(--black);
-        }
-        .intro {
-            font-size: 1.222rem; /* 22px */
-            line-height: 1.5;
-            color: var(--gray);
-            max-width: 540px;
-        }
-
-        /* Section headers */
-        h2 {
-            font-family: var(--sans);
-            font-size: 0.667rem; /* 12px */
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--light-gray);
-            margin-bottom: 24px;
-        }
-
-        /* Post list */
-        .post-list { list-style: none; }
-        .post-item {
-            padding: 24px 0;
-            border-top: 1px solid var(--border);
-        }
-        .post-item:last-child { border-bottom: 1px solid var(--border); }
-        .post-title {
-            font-family: var(--sans);
-            text-decoration: none;
-            color: var(--black);
-            font-size: 1.111rem; /* 20px */
-            font-weight: 500;
-            line-height: 1.3;
-            display: block;
-            margin-bottom: 6px;
-        }
-        .post-title:hover { color: var(--accent); }
-        .post-date {
-            font-family: var(--sans);
-            color: var(--light-gray);
-            font-size: 0.778rem; /* 14px */
-        }
-        .view-all {
-            margin-top: 32px;
-        }
-        .view-all a {
-            font-family: var(--sans);
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.889rem; /* 16px */
-            font-weight: 500;
-        }
-        .view-all a:hover { text-decoration: underline; }
-
-        /* Footer */
-        footer {
-            margin-top: 80px;
-            padding: 32px 0;
-            border-top: 1px solid var(--border);
-            font-family: var(--sans);
-            color: var(--light-gray);
-            font-size: 0.778rem; /* 14px */
-        }
-
-        @media (max-width: 600px) {
-            html { font-size: 16px; }
-            .container { padding: 0 20px; }
-            nav { gap: 24px; padding: 24px 0; }
-            .hero { padding: 48px 0; }
-            h1 { font-size: 2rem; }
-        }
-
-        @view-transition { navigation: auto; }
-        ::view-transition-old(root) { animation: fade-out 0.15s ease-out; }
-        ::view-transition-new(root) { animation: fade-in 0.15s ease-in; }
-        @keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
-        @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
-        main { view-transition-name: main; }
-    </style>
+    </script>
+    <link rel="stylesheet" href="/jornal/assets/css/styles.css">
 </head>
-<body>
-    <div class="container">
-        <nav>
-            <a href="/jornal/">Home</a>
-            <a href="/jornal/about.html">About</a>
-            <a href="/jornal/blog/">Blog</a>
-            <a href="/jornal/contact.html">Contact</a>
+<body class="font-serif text-lg leading-relaxed text-black bg-white antialiased">
+    <div class="max-w-[720px] mx-auto px-6 sm:px-5">
+        <nav class="font-sans flex gap-8 sm:gap-6 py-8 sm:py-6 border-b border-border">
+            <a href="/jornal/" class="no-underline text-black text-sm font-medium tracking-wide hover:text-accent">Home</a>
+            <a href="/jornal/about.html" class="no-underline text-black text-sm font-medium tracking-wide hover:text-accent">About</a>
+            <a href="/jornal/blog/" class="no-underline text-black text-sm font-medium tracking-wide hover:text-accent">Blog</a>
+            <a href="/jornal/contact.html" class="no-underline text-black text-sm font-medium tracking-wide hover:text-accent">Contact</a>
         </nav>
 
         <main>
-            <div class="hero">
-                <h1>Jornal</h1>
-                <p class="intro">A simple space for thoughts, ideas, and stories. No databases, no frameworks—just words on a page.</p>
+            <div class="py-20 sm:py-12">
+                <h1 class="font-sans text-5xl sm:text-3xl font-semibold leading-tight tracking-tight mb-6 text-black">Jornal</h1>
+                <p class="text-[1.222rem] leading-relaxed text-gray max-w-[540px]">A simple space for thoughts, ideas, and stories. No databases, no frameworks—just words on a page.</p>
             </div>
 
             <section>
-                <h2>Latest Posts</h2>
-                <ul class="post-list">
+                <h2 class="font-sans text-xs font-semibold uppercase tracking-widest text-gray-light mb-6">Latest Posts</h2>
+                <ul class="list-none">
                     <!-- POSTS -->
-                    <li class="post-item">
-                        <a href="/jornal/blog/vibe-coding-for-designers.html" class="post-title">Vibe Coding for Designers</a>
-                        <span class="post-date">January 26, 2026</span>
+                    <li class="py-6 border-t border-b border-border">
+                        <a href="/jornal/blog/vibe-coding-for-designers.html" class="font-sans no-underline text-black text-xl font-medium leading-snug block mb-1.5 hover:text-accent">Vibe Coding for Designers</a>
+                        <span class="font-sans text-gray-light text-sm">January 26, 2026</span>
                     </li>
                     <!-- END POSTS -->
                 </ul>
-                <p class="view-all"><a href="/jornal/blog/">View all posts →</a></p>
+                <p class="mt-8"><a href="/jornal/blog/" class="font-sans text-accent no-underline text-base font-medium hover:underline">View all posts →</a></p>
             </section>
         </main>
 
-        <footer>
+        <footer class="mt-20 py-8 border-t border-border font-sans text-gray-light text-sm">
             <p>Jornal</p>
         </footer>
     </div>
-    <script>
-        document.addEventListener('click', async (e) => {
-            const link = e.target.closest('a');
-            if (!link || link.origin !== location.origin) return;
-            e.preventDefault();
-            const url = link.href;
-            try {
-                const res = await fetch(url);
-                const html = await res.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const newMain = doc.querySelector('main');
-                const newTitle = doc.querySelector('title').textContent;
-                if (document.startViewTransition) {
-                    document.startViewTransition(() => {
-                        document.querySelector('main').replaceWith(newMain);
-                        document.title = newTitle;
-                    });
-                } else {
-                    document.querySelector('main').replaceWith(newMain);
-                    document.title = newTitle;
-                }
-                history.pushState({}, '', url);
-            } catch (err) { location.href = url; }
-        });
-        window.addEventListener('popstate', () => location.reload());
-    </script>
+    <script src="/jornal/assets/js/main.js"></script>
 </body>
 </html>
