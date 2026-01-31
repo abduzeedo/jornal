@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Your Own Blog with Jornal - Jornal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Source Serif 4', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        black: '#1a1a1a',
+                        gray: { DEFAULT: '#444', light: '#999' },
+                        border: '#e5e5e5',
+                        accent: '#0066cc',
+                    },
+                    fontSize: {
+                        'display': ['2.25rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+                        'headline-lg': ['2rem', { lineHeight: '1.25', letterSpacing: '-0.01em' }],
+                        'headline-md': ['1.75rem', { lineHeight: '1.3' }],
+                        'headline-sm': ['1.5rem', { lineHeight: '1.35' }],
+                        'title-lg': ['1.375rem', { lineHeight: '1.4' }],
+                        'title-md': ['1rem', { lineHeight: '1.5' }],
+                        'body-lg': ['1rem', { lineHeight: '1.625' }],
+                        'body-md': ['0.875rem', { lineHeight: '1.5' }],
+                        'label': ['0.875rem', { lineHeight: '1.5', letterSpacing: '0.01em' }],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/jornal/assets/css/styles.css">
+</head>
+<body class="font-serif text-body-lg text-black bg-white antialiased">
+    <div class="max-w-[720px] mx-auto px-6 sm:px-5">
+        <nav class="font-sans flex gap-8 sm:gap-6 py-8 sm:py-6 border-b border-border">
+            <a href="/jornal/" class="no-underline text-black text-label font-medium hover:text-accent">Home</a>
+            <a href="/jornal/about.html" class="no-underline text-black text-label font-medium hover:text-accent">About</a>
+            <a href="/jornal/blog/" class="no-underline text-black text-label font-medium hover:text-accent">Blog</a>
+            <a href="/jornal/contact.html" class="no-underline text-black text-label font-medium hover:text-accent">Contact</a>
+        </nav>
+
+        <main>
+            <header class="py-12 sm:py-8">
+                <p class="font-sans text-gray-light text-body-md mb-4">January 31, 2026</p>
+                <h1 class="font-sans text-display sm:text-headline-lg font-semibold text-black mb-6">Start Your Own Blog with Jornal</h1>
+                <p class="text-title-lg text-gray">A step-by-step guide for designers and non-technical people to launch their own blog using GitHub Pages—no coding required.</p>
+            </header>
+
+            <figure class="my-8 -mx-6 sm:-mx-5">
+                <img
+                    src="https://source.unsplash.com/94xhfiXTkz4/1600x900"
+                    alt="Palm trees reaching towards a vibrant blue sky"
+                    class="w-full h-auto"
+                >
+                <figcaption class="text-body-md text-gray-light mt-3 px-6 sm:px-5">Photo by <a href="https://unsplash.com/@abduzeedo" class="text-accent hover:underline">Fabio Sasso</a> on Unsplash</figcaption>
+            </figure>
+
+            <article>
+                <p class="text-body-lg text-gray mb-6">You're reading this blog. You like how simple it is. You want one just like it. Good news: you can have it running in about 10 minutes, and you don't need to know how to code.</p>
+
+                <p class="text-body-lg text-gray mb-6">This guide will walk you through everything—from creating a GitHub account to publishing your first post. Let's do this.</p>
+
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">What You'll Need</h2>
+
+                <p class="text-body-lg text-gray mb-6">Before we start, here's what you'll need:</p>
+
+                <ul class="list-disc pl-6 mb-6 text-body-lg text-gray space-y-2">
+                    <li>A GitHub account (free)</li>
+                    <li>Claude Code or access to Claude</li>
+                    <li>About 10 minutes of your time</li>
+                </ul>
+
+                <p class="text-body-lg text-gray mb-6">That's it. No servers to configure. No databases to set up. No monthly hosting fees.</p>
+
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">Step 1: Create a GitHub Account</h2>
+
+                <p class="text-body-lg text-gray mb-6">If you don't have a GitHub account yet, head to <a href="https://github.com" class="text-accent underline hover:no-underline">github.com</a> and sign up. It's free. Pick a username you like—it'll be part of your blog's URL.</p>
+
+                <p class="text-body-lg text-gray mb-6">Once you're in, you're ready for the next step.</p>
+
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">Step 2: Fork the Jornal Repository</h2>
+
+                <p class="text-body-lg text-gray mb-6">Here's where the magic happens. Go to the Jornal repository:</p>
+
+                <p class="text-body-lg text-gray mb-6"><a href="https://github.com/abduzeedo/jornal" class="text-accent underline hover:no-underline">github.com/abduzeedo/jornal</a></p>
+
+                <p class="text-body-lg text-gray mb-6">Click the <strong class="text-black">"Fork"</strong> button in the top right corner. This creates your own copy of the blog that you can customize however you want.</p>
+
+                <p class="text-body-lg text-gray mb-6">When prompted, you can rename it to whatever you like. If you want the cleanest URL possible, name it <code class="font-mono text-body-md bg-[#f5f5f5] px-1.5 py-0.5 rounded">yourusername.github.io</code> (replacing "yourusername" with your actual GitHub username).</p>
+
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">Step 3: Enable GitHub Pages</h2>
+
+                <p class="text-body-lg text-gray mb-6">Now let's make your blog live on the internet:</p>
+
+                <ol class="list-decimal pl-6 mb-6 text-body-lg text-gray space-y-2">
+                    <li>Go to your forked repository</li>
+                    <li>Click <strong class="text-black">"Settings"</strong> (the gear icon)</li>
+                    <li>Scroll down to <strong class="text-black">"Pages"</strong> in the left sidebar</li>
+                    <li>Under "Source," select <strong class="text-black">"Deploy from a branch"</strong></li>
+                    <li>Choose <strong class="text-black">"main"</strong> branch and <strong class="text-black">"/ (root)"</strong> folder</li>
+                    <li>Click <strong class="text-black">"Save"</strong></li>
+                </ol>
+
+                <p class="text-body-lg text-gray mb-6">Wait a minute or two, then refresh the page. You'll see a green box with your live URL. Click it. Your blog is now live on the internet.</p>
+
+                <blockquote class="border-l-[3px] border-border pl-6 my-8 italic text-title-lg leading-relaxed text-gray">Your blog URL will be something like: yourusername.github.io/jornal</blockquote>
+
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">Step 4: Clone It to Your Computer</h2>
+
+                <p class="text-body-lg text-gray mb-6">To make changes and write posts, you'll want the files on your computer. The easiest way:</p>
+
+                <ol class="list-decimal pl-6 mb-6 text-body-lg text-gray space-y-2">
+                    <li>Download and install <a href="https://desktop.github.com" class="text-accent underline hover:no-underline">GitHub Desktop</a> (it's free and beginner-friendly)</li>
+                    <li>Sign in with your GitHub account</li>
+                    <li>Click <strong class="text-black">"Clone a repository from the Internet"</strong></li>
+                    <li>Find your forked Jornal repository and clone it</li>
+                    <li>Choose where to save it on your computer</li>
+                </ol>
+
+                <p class="text-body-lg text-gray mb-6">Now you have all the blog files on your computer, ready to customize.</p>
+
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">Step 5: Make It Yours</h2>
+
+                <p class="text-body-lg text-gray mb-6">Open the folder in Claude Code (or your preferred editor with Claude). Now the fun begins.</p>
+
+                <p class="text-body-lg text-gray mb-6">Just tell Claude what you want to change:</p>
+
+                <ul class="list-disc pl-6 mb-6 text-body-lg text-gray space-y-2">
+                    <li><strong class="text-black">"Change the site title to My Blog"</strong></li>
+                    <li><strong class="text-black">"Update the about page with my bio"</strong></li>
+                    <li><strong class="text-black">"Change the accent color to green"</strong></li>
+                    <li><strong class="text-black">"Add my email to the contact page"</strong></li>
+                </ul>
+
+                <p class="text-body-lg text-gray mb-6">Claude will make the changes for you. Review them, and when you're happy, move to the next step.</p>
+
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">Step 6: Publish Your Changes</h2>
+
+                <p class="text-body-lg text-gray mb-6">After making changes, you need to push them to GitHub. In GitHub Desktop:</p>
+
+                <ol class="list-decimal pl-6 mb-6 text-body-lg text-gray space-y-2">
+                    <li>You'll see your changes listed on the left</li>
+                    <li>Write a short summary (like "Updated site title")</li>
+                    <li>Click <strong class="text-black">"Commit to main"</strong></li>
+                    <li>Click <strong class="text-black">"Push origin"</strong></li>
+                </ol>
+
+                <p class="text-body-lg text-gray mb-6">Wait about a minute, then refresh your live site. Your changes are now live.</p>
+
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">Step 7: Write Your First Post</h2>
+
+                <p class="text-body-lg text-gray mb-6">This is the best part. Open the folder in Claude Code and say:</p>
+
+                <p class="text-body-lg text-gray mb-6"><strong class="text-black">"Let's blog"</strong></p>
+
+                <p class="text-body-lg text-gray mb-6">Then describe what you want to write about. Claude will:</p>
+
+                <ul class="list-disc pl-6 mb-6 text-body-lg text-gray space-y-2">
+                    <li>Write the post based on your description</li>
+                    <li>Create the HTML file</li>
+                    <li>Update the blog listing</li>
+                    <li>Update the home page</li>
+                </ul>
+
+                <p class="text-body-lg text-gray mb-6">Review the post, make any tweaks you want, then commit and push. Your new post is live.</p>
+
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">Tips for Success</h2>
+
+                <p class="text-body-lg text-gray mb-6">A few things I've learned along the way:</p>
+
+                <ul class="list-disc pl-6 mb-6 text-body-lg text-gray space-y-2">
+                    <li><strong class="text-black">Be specific.</strong> Instead of "make it look better," try "make the headings larger and add more space between paragraphs."</li>
+                    <li><strong class="text-black">Preview locally.</strong> Run <code class="font-mono text-body-md bg-[#f5f5f5] px-1.5 py-0.5 rounded">python3 -m http.server 8000</code> in your terminal, then open <code class="font-mono text-body-md bg-[#f5f5f5] px-1.5 py-0.5 rounded">localhost:8000</code> to see changes before publishing.</li>
+                    <li><strong class="text-black">Commit often.</strong> Small, frequent commits are easier to track than big changes.</li>
+                    <li><strong class="text-black">Don't be afraid to experiment.</strong> You can always undo changes with Git.</li>
+                </ul>
+
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">What You Get</h2>
+
+                <p class="text-body-lg text-gray mb-6">With this setup, you have:</p>
+
+                <ul class="list-disc pl-6 mb-6 text-body-lg text-gray space-y-2">
+                    <li><strong class="text-black">Free hosting</strong> — GitHub Pages costs nothing</li>
+                    <li><strong class="text-black">Fast loading</strong> — Static HTML is as fast as it gets</li>
+                    <li><strong class="text-black">Full control</strong> — Every pixel is yours to customize</li>
+                    <li><strong class="text-black">No maintenance</strong> — No plugins to update, no security patches</li>
+                    <li><strong class="text-black">Version history</strong> — Git tracks every change you make</li>
+                    <li><strong class="text-black">AI-powered writing</strong> — Claude helps you create content</li>
+                </ul>
+
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">Go Build Something</h2>
+
+                <p class="text-body-lg text-gray mb-6">That's it. You now have everything you need to run your own blog. No excuses about not being technical enough. No waiting for the "right" platform. Just start writing.</p>
+
+                <p class="text-body-lg text-gray mb-6">The tools have never been more accessible. The only thing left is your ideas.</p>
+
+                <p class="text-body-lg text-gray mb-6">What will you write about?</p>
+
+                <div class="mt-16 pt-8 border-t border-border">
+                    <a href="/jornal/blog/" class="font-sans text-black no-underline text-body-lg font-medium hover:text-accent">← Back to all posts</a>
+                </div>
+            </article>
+        </main>
+
+        <footer class="mt-20 py-8 border-t border-border font-sans text-gray-light text-body-md">
+            <p>Jornal</p>
+        </footer>
+    </div>
+    <script src="/jornal/assets/js/main.js"></script>
+</body>
+</html>
