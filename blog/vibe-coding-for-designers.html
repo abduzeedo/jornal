@@ -21,6 +21,17 @@
                         gray: { DEFAULT: '#444', light: '#999' },
                         border: '#e5e5e5',
                         accent: '#0066cc',
+                    },
+                    fontSize: {
+                        'display': ['2.25rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+                        'headline-lg': ['2rem', { lineHeight: '1.25', letterSpacing: '-0.01em' }],
+                        'headline-md': ['1.75rem', { lineHeight: '1.3' }],
+                        'headline-sm': ['1.5rem', { lineHeight: '1.35' }],
+                        'title-lg': ['1.375rem', { lineHeight: '1.4' }],
+                        'title-md': ['1rem', { lineHeight: '1.5' }],
+                        'body-lg': ['1rem', { lineHeight: '1.625' }],
+                        'body-md': ['0.875rem', { lineHeight: '1.5' }],
+                        'label': ['0.875rem', { lineHeight: '1.5', letterSpacing: '0.01em' }],
                     }
                 }
             }
@@ -28,77 +39,77 @@
     </script>
     <link rel="stylesheet" href="/jornal/assets/css/styles.css">
 </head>
-<body class="font-serif text-lg leading-relaxed text-black bg-white antialiased">
+<body class="font-serif text-body-lg text-black bg-white antialiased">
     <div class="max-w-[720px] mx-auto px-6 sm:px-5">
         <nav class="font-sans flex gap-8 sm:gap-6 py-8 sm:py-6 border-b border-border">
-            <a href="/jornal/" class="no-underline text-black text-sm font-medium tracking-wide hover:text-accent">Home</a>
-            <a href="/jornal/about.html" class="no-underline text-black text-sm font-medium tracking-wide hover:text-accent">About</a>
-            <a href="/jornal/blog/" class="no-underline text-black text-sm font-medium tracking-wide hover:text-accent">Blog</a>
-            <a href="/jornal/contact.html" class="no-underline text-black text-sm font-medium tracking-wide hover:text-accent">Contact</a>
+            <a href="/jornal/" class="no-underline text-black text-label font-medium hover:text-accent">Home</a>
+            <a href="/jornal/about.html" class="no-underline text-black text-label font-medium hover:text-accent">About</a>
+            <a href="/jornal/blog/" class="no-underline text-black text-label font-medium hover:text-accent">Blog</a>
+            <a href="/jornal/contact.html" class="no-underline text-black text-label font-medium hover:text-accent">Contact</a>
         </nav>
 
         <main>
             <header class="py-20 pb-12 sm:py-12 sm:pb-8 border-b border-border mb-12 sm:mb-8">
-                <h1 class="font-sans text-5xl sm:text-[1.875rem] font-semibold leading-tight tracking-tight text-black mb-4">Vibe Coding for Designers</h1>
-                <p class="font-sans text-gray-light text-sm">January 26, 2026</p>
+                <h1 class="font-sans text-display sm:text-headline-lg font-semibold text-black mb-4">Vibe Coding for Designers</h1>
+                <p class="font-sans text-gray-light text-body-md">January 26, 2026</p>
             </header>
 
             <article>
-                <p class="text-[1.167rem] text-black leading-[1.75] mb-6">I'm going to let you in on a secret: I have no idea what I'm doing. Well, okay, that's not entirely true. I know what I <em>want</em> to do. I just don't always know the exact syntax to make it happen. And apparently, in 2026, that's totally fine.</p>
+                <p class="text-title-lg text-black leading-relaxed mb-6">I'm going to let you in on a secret: I have no idea what I'm doing. Well, okay, that's not entirely true. I know what I <em>want</em> to do. I just don't always know the exact syntax to make it happen. And apparently, in 2026, that's totally fine.</p>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">Welcome to vibe coding.</p>
+                <p class="text-body-lg text-gray mb-6">Welcome to vibe coding.</p>
 
-                <h2 class="font-sans text-[1.556rem] sm:text-[1.375rem] font-semibold leading-tight tracking-tight text-black mt-12 sm:mt-10 mb-5 sm:mb-4">What Even Is Vibe Coding?</h2>
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">What Even Is Vibe Coding?</h2>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">Vibe coding is when you describe what you want to build, and AI helps you write the code. You bring the vision, the taste, the "I want it to feel like this" energy. The AI handles the semicolons and the curly braces and remembering whether it's <code class="font-mono text-sm bg-[#f5f5f5] px-1.5 py-0.5 rounded">forEach</code> or <code class="font-mono text-sm bg-[#f5f5f5] px-1.5 py-0.5 rounded">for...of</code> (honestly, I still mix those up).</p>
+                <p class="text-body-lg text-gray mb-6">Vibe coding is when you describe what you want to build, and AI helps you write the code. You bring the vision, the taste, the "I want it to feel like this" energy. The AI handles the semicolons and the curly braces and remembering whether it's <code class="font-mono text-body-md bg-[#f5f5f5] px-1.5 py-0.5 rounded">forEach</code> or <code class="font-mono text-body-md bg-[#f5f5f5] px-1.5 py-0.5 rounded">for...of</code> (honestly, I still mix those up).</p>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">It's not cheating. It's collaboration. Like having a really patient senior developer sitting next to you who never sighs when you ask the same question twice.</p>
+                <p class="text-body-lg text-gray mb-6">It's not cheating. It's collaboration. Like having a really patient senior developer sitting next to you who never sighs when you ask the same question twice.</p>
 
-                <h2 class="font-sans text-[1.556rem] sm:text-[1.375rem] font-semibold leading-tight tracking-tight text-black mt-12 sm:mt-10 mb-5 sm:mb-4">Why This Matters for Designers</h2>
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">Why This Matters for Designers</h2>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">Here's the thing: designers have always been able to <em>think</em> in systems. We understand hierarchy, flow, state changes, user journeys. We've just been locked out of building because the syntax was a barrier.</p>
+                <p class="text-body-lg text-gray mb-6">Here's the thing: designers have always been able to <em>think</em> in systems. We understand hierarchy, flow, state changes, user journeys. We've just been locked out of building because the syntax was a barrier.</p>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">Vibe coding removes that barrier. Not entirely—you still need to understand concepts, and you'll definitely break things. But the gap between "I can imagine this" and "I can ship this" just got a lot smaller.</p>
+                <p class="text-body-lg text-gray mb-6">Vibe coding removes that barrier. Not entirely—you still need to understand concepts, and you'll definitely break things. But the gap between "I can imagine this" and "I can ship this" just got a lot smaller.</p>
 
-                <blockquote class="border-l-[3px] border-border pl-6 my-8 italic text-[1.167rem] leading-relaxed text-gray">The best code is the code that exists and works. Perfection is for version two.</blockquote>
+                <blockquote class="border-l-[3px] border-border pl-6 my-8 italic text-title-lg leading-relaxed text-gray">The best code is the code that exists and works. Perfection is for version two.</blockquote>
 
-                <h2 class="font-sans text-[1.556rem] sm:text-[1.375rem] font-semibold leading-tight tracking-tight text-black mt-12 sm:mt-10 mb-5 sm:mb-4">How We Built This Blog</h2>
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">How We Built This Blog</h2>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">This site you're reading right now? It started with a simple conversation. I wanted a blog. No databases. No complicated build tools. No waiting for Webpack to do whatever Webpack does.</p>
+                <p class="text-body-lg text-gray mb-6">This site you're reading right now? It started with a simple conversation. I wanted a blog. No databases. No complicated build tools. No waiting for Webpack to do whatever Webpack does.</p>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">Just HTML files. Fast. Simple. Something I could actually understand when I looked at it six months from now.</p>
+                <p class="text-body-lg text-gray mb-6">Just HTML files. Fast. Simple. Something I could actually understand when I looked at it six months from now.</p>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">So I described what I wanted: a home page, an about page, a contact page, and a blog section where I could add posts by just... asking for them. Each post becomes a new HTML file. The blog listing updates. Done.</p>
+                <p class="text-body-lg text-gray mb-6">So I described what I wanted: a home page, an about page, a contact page, and a blog section where I could add posts by just... asking for them. Each post becomes a new HTML file. The blog listing updates. Done.</p>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">The whole thing took one conversation. I said "let's blog," described what I wanted to write about, and here we are. You're reading the output.</p>
+                <p class="text-body-lg text-gray mb-6">The whole thing took one conversation. I said "let's blog," described what I wanted to write about, and here we are. You're reading the output.</p>
 
-                <h2 class="font-sans text-[1.556rem] sm:text-[1.375rem] font-semibold leading-tight tracking-tight text-black mt-12 sm:mt-10 mb-5 sm:mb-4">It's Not Magic (But It Feels Like It)</h2>
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">It's Not Magic (But It Feels Like It)</h2>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">Look, I'm not going to pretend I suddenly understand JavaScript. I don't. I still look at some code and my brain just plays elevator music. But I can read it now, kind of. I can point at things and say "that part handles the click" or "this is where it breaks."</p>
+                <p class="text-body-lg text-gray mb-6">Look, I'm not going to pretend I suddenly understand JavaScript. I don't. I still look at some code and my brain just plays elevator music. But I can read it now, kind of. I can point at things and say "that part handles the click" or "this is where it breaks."</p>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">And more importantly, I can <em>build things</em>. Real things. Things that work in a browser and do what I want them to do.</p>
+                <p class="text-body-lg text-gray mb-6">And more importantly, I can <em>build things</em>. Real things. Things that work in a browser and do what I want them to do.</p>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">Is the code perfect? Absolutely not. Is it shipped? Yes. And shipped beats perfect every single time.</p>
+                <p class="text-body-lg text-gray mb-6">Is the code perfect? Absolutely not. Is it shipped? Yes. And shipped beats perfect every single time.</p>
 
-                <h2 class="font-sans text-[1.556rem] sm:text-[1.375rem] font-semibold leading-tight tracking-tight text-black mt-12 sm:mt-10 mb-5 sm:mb-4">The Goal: Simple and Fast</h2>
+                <h2 class="font-sans text-headline-md sm:text-headline-sm font-semibold text-black mt-12 mb-4">The Goal: Simple and Fast</h2>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">This whole project is an experiment in minimalism. No frameworks. No dependencies. No build step. You open the HTML file, and it works. You want a new blog post, you ask for one. It appears.</p>
+                <p class="text-body-lg text-gray mb-6">This whole project is an experiment in minimalism. No frameworks. No dependencies. No build step. You open the HTML file, and it works. You want a new blog post, you ask for one. It appears.</p>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">That's it. That's the whole system.</p>
+                <p class="text-body-lg text-gray mb-6">That's it. That's the whole system.</p>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">Sometimes the best architecture is no architecture. Sometimes the best CMS is just... asking nicely.</p>
+                <p class="text-body-lg text-gray mb-6">Sometimes the best architecture is no architecture. Sometimes the best CMS is just... asking nicely.</p>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">If you're a designer who's ever felt intimidated by code, I get it. I've been there. I'm still there, honestly. But vibe coding has changed the game. You don't need to be a developer to build things anymore. You just need to know what you want and be willing to describe it.</p>
+                <p class="text-body-lg text-gray mb-6">If you're a designer who's ever felt intimidated by code, I get it. I've been there. I'm still there, honestly. But vibe coding has changed the game. You don't need to be a developer to build things anymore. You just need to know what you want and be willing to describe it.</p>
 
-                <p class="text-[1.056rem] leading-[1.75] text-gray mb-6">The vibes will handle the rest.</p>
+                <p class="text-body-lg text-gray mb-6">The vibes will handle the rest.</p>
 
                 <div class="mt-16 pt-8 border-t border-border">
-                    <a href="/jornal/blog/" class="font-sans text-black no-underline text-base font-medium hover:text-accent">← Back to all posts</a>
+                    <a href="/jornal/blog/" class="font-sans text-black no-underline text-body-lg font-medium hover:text-accent">← Back to all posts</a>
                 </div>
             </article>
         </main>
 
-        <footer class="mt-20 py-8 border-t border-border font-sans text-gray-light text-sm">
+        <footer class="mt-20 py-8 border-t border-border font-sans text-gray-light text-body-md">
             <p>Jornal</p>
         </footer>
     </div>

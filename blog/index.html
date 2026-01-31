@@ -21,6 +21,17 @@
                         gray: { DEFAULT: '#666', light: '#999' },
                         border: '#e5e5e5',
                         accent: '#0066cc',
+                    },
+                    fontSize: {
+                        'display': ['2.25rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+                        'headline-lg': ['2rem', { lineHeight: '1.25', letterSpacing: '-0.01em' }],
+                        'headline-md': ['1.75rem', { lineHeight: '1.3' }],
+                        'headline-sm': ['1.5rem', { lineHeight: '1.35' }],
+                        'title-lg': ['1.375rem', { lineHeight: '1.4' }],
+                        'title-md': ['1rem', { lineHeight: '1.5' }],
+                        'body-lg': ['1rem', { lineHeight: '1.5' }],
+                        'body-md': ['0.875rem', { lineHeight: '1.5' }],
+                        'label': ['0.875rem', { lineHeight: '1.5', letterSpacing: '0.01em' }],
                     }
                 }
             }
@@ -28,29 +39,29 @@
     </script>
     <link rel="stylesheet" href="/jornal/assets/css/styles.css">
 </head>
-<body class="font-serif text-lg leading-relaxed text-black bg-white antialiased">
+<body class="font-serif text-body-lg text-black bg-white antialiased">
     <div class="max-w-[720px] mx-auto px-6 sm:px-5">
         <nav class="font-sans flex gap-8 sm:gap-6 py-8 sm:py-6 border-b border-border">
-            <a href="/jornal/" class="no-underline text-black text-sm font-medium tracking-wide hover:text-accent">Home</a>
-            <a href="/jornal/about.html" class="no-underline text-black text-sm font-medium tracking-wide hover:text-accent">About</a>
-            <a href="/jornal/blog/" class="no-underline text-black text-sm font-medium tracking-wide hover:text-accent">Blog</a>
-            <a href="/jornal/contact.html" class="no-underline text-black text-sm font-medium tracking-wide hover:text-accent">Contact</a>
+            <a href="/jornal/" class="no-underline text-black text-label font-medium hover:text-accent">Home</a>
+            <a href="/jornal/about.html" class="no-underline text-black text-label font-medium hover:text-accent">About</a>
+            <a href="/jornal/blog/" class="no-underline text-black text-label font-medium hover:text-accent">Blog</a>
+            <a href="/jornal/contact.html" class="no-underline text-black text-label font-medium hover:text-accent">Contact</a>
         </nav>
 
         <main>
             <div class="py-20 pb-12 sm:py-12 sm:pb-8">
-                <h1 class="font-sans text-5xl sm:text-3xl font-semibold leading-tight tracking-tight text-black">Blog</h1>
+                <h1 class="font-sans text-display sm:text-headline-lg font-semibold text-black">Blog</h1>
             </div>
             <ul class="list-none">
                 <!-- POSTS -->
                 <li class="py-8 border-b border-border">
-                    <a href="/jornal/blog/vibe-coding-for-designers.html" class="font-sans no-underline text-black text-2xl sm:text-xl font-medium leading-snug block mb-2 hover:text-accent">Vibe Coding for Designers</a>
-                    <span class="font-sans text-gray-light text-sm">January 26, 2026</span>
+                    <a href="/jornal/blog/vibe-coding-for-designers.html" class="font-sans no-underline text-black text-headline-sm sm:text-title-lg font-medium block mb-2 hover:text-accent">Vibe Coding for Designers</a>
+                    <span class="font-sans text-gray-light text-body-md">January 26, 2026</span>
                 </li>
             </ul>
         </main>
 
-        <footer class="mt-20 py-8 border-t border-border font-sans text-gray-light text-sm">
+        <footer class="mt-20 py-8 border-t border-border font-sans text-gray-light text-body-md">
             <p>Jornal</p>
         </footer>
     </div>
