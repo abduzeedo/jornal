@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Coding for Designers - Jornal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --serif: 'Source Serif 4', Georgia, serif;
+            --black: #1a1a1a;
+            --gray: #444;
+            --light-gray: #999;
+            --border: #e5e5e5;
+            --bg: #fff;
+            --accent: #0066cc;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 18px; }
+        body {
+            font-family: var(--serif);
+            line-height: 1.6;
+            color: var(--black);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation - Sans-serif */
+        nav {
+            font-family: var(--sans);
+            display: flex;
+            gap: 32px;
+            padding: 32px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--black);
+            font-size: 0.778rem; /* 14px */
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+        nav a:hover { color: var(--accent); }
+
+        /* Article Header */
+        .post-header {
+            padding: 80px 0 48px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 48px;
+        }
+        .post-header h1 {
+            font-family: var(--sans);
+            font-size: 2.667rem; /* 48px */
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--black);
+            margin-bottom: 16px;
+        }
+        .post-meta {
+            font-family: var(--sans);
+            color: var(--light-gray);
+            font-size: 0.778rem; /* 14px */
+        }
+
+        /* Article Body - Serif */
+        article p {
+            font-size: 1.056rem; /* 19px */
+            line-height: 1.75;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        article p:first-of-type {
+            font-size: 1.167rem; /* 21px - lead paragraph */
+            color: var(--black);
+        }
+
+        /* Headings in article - Sans-serif */
+        article h2 {
+            font-family: var(--sans);
+            font-size: 1.556rem; /* 28px */
+            font-weight: 600;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+            color: var(--black);
+            margin: 3rem 0 1.25rem;
+        }
+        article h3 {
+            font-family: var(--sans);
+            font-size: 1.222rem; /* 22px */
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--black);
+            margin: 2.5rem 0 1rem;
+        }
+        article h4 {
+            font-family: var(--sans);
+            font-size: 1rem; /* 18px */
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--black);
+            margin: 2rem 0 0.75rem;
+        }
+        article h5 {
+            font-family: var(--sans);
+            font-size: 0.889rem; /* 16px */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--light-gray);
+            margin: 2rem 0 0.75rem;
+        }
+
+        /* Links */
+        article a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        article a:hover { text-decoration: none; }
+
+        /* Blockquote - Serif italic */
+        article blockquote {
+            border-left: 3px solid var(--border);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.167rem; /* 21px */
+            line-height: 1.6;
+            color: var(--gray);
+        }
+
+        /* Lists */
+        article ul, article ol {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+        article li {
+            font-size: 1.056rem;
+            line-height: 1.75;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+        article ul li { list-style-type: disc; }
+        article ol li { list-style-type: decimal; }
+
+        /* Code */
+        article code {
+            font-family: 'SF Mono', Menlo, Consolas, monospace;
+            font-size: 0.889rem;
+            background: #f5f5f5;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+        }
+        article pre {
+            background: #f5f5f5;
+            padding: 1.25rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        article pre code {
+            background: none;
+            padding: 0;
+            font-size: 0.833rem;
+            line-height: 1.6;
+        }
+
+        /* Emphasis */
+        article em { font-style: italic; }
+        article strong { font-weight: 600; color: var(--black); }
+
+        /* Horizontal rule */
+        article hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+
+        /* Back link */
+        .back-link {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .back-link a {
+            font-family: var(--sans);
+            color: var(--black);
+            text-decoration: none;
+            font-size: 0.889rem;
+            font-weight: 500;
+        }
+        .back-link a:hover { color: var(--accent); }
+
+        /* Footer - Sans-serif */
+        footer {
+            margin-top: 80px;
+            padding: 32px 0;
+            border-top: 1px solid var(--border);
+            font-family: var(--sans);
+            color: var(--light-gray);
+            font-size: 0.778rem;
+        }
+
+        @media (max-width: 600px) {
+            html { font-size: 16px; }
+            .container { padding: 0 20px; }
+            nav { gap: 24px; padding: 24px 0; }
+            .post-header { padding: 48px 0 32px; margin-bottom: 32px; }
+            .post-header h1 { font-size: 1.875rem; }
+            article h2 { font-size: 1.375rem; margin: 2.5rem 0 1rem; }
+            article h3 { font-size: 1.125rem; }
+        }
+
+        @view-transition { navigation: auto; }
+        ::view-transition-old(root) { animation: fade-out 0.15s ease-out; }
+        ::view-transition-new(root) { animation: fade-in 0.15s ease-in; }
+        @keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+        @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+        main { view-transition-name: main; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+
+        <main>
+            <header class="post-header">
+                <h1>Vibe Coding for Designers</h1>
+                <p class="post-meta">January 26, 2026</p>
+            </header>
+
+            <article>
+                <p>I'm going to let you in on a secret: I have no idea what I'm doing. Well, okay, that's not entirely true. I know what I <em>want</em> to do. I just don't always know the exact syntax to make it happen. And apparently, in 2026, that's totally fine.</p>
+
+                <p>Welcome to vibe coding.</p>
+
+                <h2>What Even Is Vibe Coding?</h2>
+
+                <p>Vibe coding is when you describe what you want to build, and AI helps you write the code. You bring the vision, the taste, the "I want it to feel like this" energy. The AI handles the semicolons and the curly braces and remembering whether it's <code>forEach</code> or <code>for...of</code> (honestly, I still mix those up).</p>
+
+                <p>It's not cheating. It's collaboration. Like having a really patient senior developer sitting next to you who never sighs when you ask the same question twice.</p>
+
+                <h2>Why This Matters for Designers</h2>
+
+                <p>Here's the thing: designers have always been able to <em>think</em> in systems. We understand hierarchy, flow, state changes, user journeys. We've just been locked out of building because the syntax was a barrier.</p>
+
+                <p>Vibe coding removes that barrier. Not entirely—you still need to understand concepts, and you'll definitely break things. But the gap between "I can imagine this" and "I can ship this" just got a lot smaller.</p>
+
+                <blockquote>The best code is the code that exists and works. Perfection is for version two.</blockquote>
+
+                <h2>How We Built This Blog</h2>
+
+                <p>This site you're reading right now? It started with a simple conversation. I wanted a blog. No databases. No complicated build tools. No waiting for Webpack to do whatever Webpack does.</p>
+
+                <p>Just HTML files. Fast. Simple. Something I could actually understand when I looked at it six months from now.</p>
+
+                <p>So I described what I wanted: a home page, an about page, a contact page, and a blog section where I could add posts by just... asking for them. Each post becomes a new HTML file. The blog listing updates. Done.</p>
+
+                <p>The whole thing took one conversation. I said "let's blog," described what I wanted to write about, and here we are. You're reading the output.</p>
+
+                <h2>It's Not Magic (But It Feels Like It)</h2>
+
+                <p>Look, I'm not going to pretend I suddenly understand JavaScript. I don't. I still look at some code and my brain just plays elevator music. But I can read it now, kind of. I can point at things and say "that part handles the click" or "this is where it breaks."</p>
+
+                <p>And more importantly, I can <em>build things</em>. Real things. Things that work in a browser and do what I want them to do.</p>
+
+                <p>Is the code perfect? Absolutely not. Is it shipped? Yes. And shipped beats perfect every single time.</p>
+
+                <h2>The Goal: Simple and Fast</h2>
+
+                <p>This whole project is an experiment in minimalism. No frameworks. No dependencies. No build step. You open the HTML file, and it works. You want a new blog post, you ask for one. It appears.</p>
+
+                <p>That's it. That's the whole system.</p>
+
+                <p>Sometimes the best architecture is no architecture. Sometimes the best CMS is just... asking nicely.</p>
+
+                <p>If you're a designer who's ever felt intimidated by code, I get it. I've been there. I'm still there, honestly. But vibe coding has changed the game. You don't need to be a developer to build things anymore. You just need to know what you want and be willing to describe it.</p>
+
+                <p>The vibes will handle the rest.</p>
+
+                <div class="back-link">
+                    <a href="/blog/">← Back to all posts</a>
+                </div>
+            </article>
+        </main>
+
+        <footer>
+            <p>Jornal</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('click', async (e) => {
+            const link = e.target.closest('a');
+            if (!link || link.origin !== location.origin) return;
+            e.preventDefault();
+            const url = link.href;
+            try {
+                const res = await fetch(url);
+                const html = await res.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const newMain = doc.querySelector('main');
+                const newTitle = doc.querySelector('title').textContent;
+                if (document.startViewTransition) {
+                    document.startViewTransition(() => {
+                        document.querySelector('main').replaceWith(newMain);
+                        document.title = newTitle;
+                    });
+                } else {
+                    document.querySelector('main').replaceWith(newMain);
+                    document.title = newTitle;
+                }
+                history.pushState({}, '', url);
+            } catch (err) { location.href = url; }
+        });
+        window.addEventListener('popstate', () => location.reload());
+    </script>
+</body>
+</html>

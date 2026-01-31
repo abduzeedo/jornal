@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jornal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --serif: 'Source Serif 4', Georgia, serif;
+            --black: #1a1a1a;
+            --gray: #666;
+            --light-gray: #999;
+            --border: #e5e5e5;
+            --bg: #fff;
+            --accent: #0066cc;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 18px; }
+        body {
+            font-family: var(--serif);
+            line-height: 1.6;
+            color: var(--black);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        nav {
+            font-family: var(--sans);
+            display: flex;
+            gap: 32px;
+            padding: 32px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--black);
+            font-size: 0.778rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+        nav a:hover { color: var(--accent); }
+        .page-header {
+            padding: 80px 0 48px;
+        }
+        h1 {
+            font-family: var(--sans);
+            font-size: 2.667rem;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--black);
+        }
+        .content p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        a { color: var(--accent); text-decoration: underline; }
+        a:hover { text-decoration: none; }
+        footer {
+            margin-top: 80px;
+            padding: 32px 0;
+            border-top: 1px solid var(--border);
+            font-family: var(--sans);
+            color: var(--light-gray);
+            font-size: 0.778rem;
+        }
+        @media (max-width: 600px) {
+            html { font-size: 16px; }
+            .container { padding: 0 20px; }
+            nav { gap: 24px; padding: 24px 0; }
+            .page-header { padding: 48px 0 32px; }
+            h1 { font-size: 2rem; }
+        }
+        @view-transition { navigation: auto; }
+        ::view-transition-old(root) { animation: fade-out 0.15s ease-out; }
+        ::view-transition-new(root) { animation: fade-in 0.15s ease-in; }
+        @keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+        @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+        main { view-transition-name: main; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+
+        <main>
+            <div class="page-header">
+                <h1>Contact</h1>
+            </div>
+            <div class="content">
+                <p>Want to get in touch? Feel free to reach out.</p>
+                <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Jornal</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('click', async (e) => {
+            const link = e.target.closest('a');
+            if (!link || link.origin !== location.origin) return;
+            e.preventDefault();
+            const url = link.href;
+            try {
+                const res = await fetch(url);
+                const html = await res.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const newMain = doc.querySelector('main');
+                const newTitle = doc.querySelector('title').textContent;
+                if (document.startViewTransition) {
+                    document.startViewTransition(() => {
+                        document.querySelector('main').replaceWith(newMain);
+                        document.title = newTitle;
+                    });
+                } else {
+                    document.querySelector('main').replaceWith(newMain);
+                    document.title = newTitle;
+                }
+                history.pushState({}, '', url);
+            } catch (err) { location.href = url; }
+        });
+        window.addEventListener('popstate', () => location.reload());
+    </script>
+</body>
+</html>
